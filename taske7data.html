@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- taske 1 -->
+  <h1>Database:</h1>
+  <p>organized collection data stored in
+    in a computer system it is controlled
+    by a (DBMS)=> DataBase Management 
+    System </p>
+    
+  <hr>
+  <h1>SQL</h1>
+  <p>(structured Query Languge), It  is
+  a programming language used to interact
+   with relational database systems. 
+   SQL is used for organizing, 
+   managing, and retrieving archived 
+   data from a computer database.</p>
+<hr>
+
+   <!-- taske 2 -->
+    <h1>Relational and Non-relational databases</h1>
+    <table border="1px">
+      <tr>
+        <th></th>
+        <th>Relational databases</th>
+        <th>Non-relational databases</th>
+      </tr>
+      <tr>
+        <th>Data Model</th>
+        <td>Structured, table-based</td>
+        <td>Flexible, document/key-value/graph-based</td>
+      </tr>
+      <tr>
+        <th>Query Language</th>
+        <td>SQL</td>
+        <td>Varies (NoSQL)</td>
+      </tr>
+      <tr>
+        <th>Relationships</th>
+        <td>Explicitly defined (primary/foreign keys)</td>
+        <td>Implicit or embedded relationships</td>
+      </tr>
+    </table>
+
+    <h1>MySQL</h1>
+    <P>MySQL is an open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) for accessing and managing databases,It is : Open Source ,Cross-Platform Support and High Performance</P>
+
+   <!-- taske 3 -->
+   <hr>
+   <h1>Numeric Data Types:</h1>
+   <ul>
+    <li>INT (integer):used to store Numbers without fractions</li>
+    <li>FLOAT/DOUBLE:Used to store decimal numbers </li>
+    <li>DECIMAL: Used to store decimal numbers</li>
+   </ul>
+<hr>
+
+  <!-- taske 4 -->
+<h1>String Data Types</h1>
+<ul>
+  <li>CHAR: A fixed-length string</li>
+  <li>VARCHAR: A variable-length string</li>
+  <li>TEXT: A large variable-length string</li>
+</ul>
+<hr>
+
+<!-- taske 5 -->
+ <h1>Date and Time Data Types</h1>
+<ul>
+  <li>DATE: Stores a date value in the format "YYYY-MM-DD"</li>
+  <li>DATETIME: tores a date and time value in the format "YYYY-MM-DD HH:MM:SS"</li>
+  <li>TIME:Stores a time value in the format "HH:MM:SS"</li>
+  <li>YEAR:Stores a year value </li>
+</ul>
+<hr>
+
+<!-- taske 6 -->
+ <h1>Primary Keys</h1>
+  <p>value which is unique and not null</p>
+  <hr>
+
+  <!-- taske 7 -->
+<h1>Null and Not Null Constraints:</h1>
+<ul>
+<li>NULL: constraint allows a column to contain NULL values.</li>
+<li>NOT NULL: constraint ensures that a column cannot have a NULL value</li>
+</ul>
+<hr>
+
+
+<!-- taske 8 -->
+ <h1>AUTO_INCREMENT</h1>
+<p>attribute in MySQL is used to generate a unique identifier for new rows in a table</p>
+   
+
+
+<!-- taske 9 -->
+   <hr>
+   <h1>Write the SQL command to create a new database named StudentDB.</h1>
+   <ol>
+    <li>open local host</li>
+    <li>phpmyadmin</li>
+    <li>SQL</li>
+    <li>write: CREATE DATABASE StudentDB;</li>
+   </ol>
+
+   <!-- taske 10 -->
+   <hr>
+   <h1>Write the SQL command to create a table named Students</h1>
+ 
+    CREAT TABLE Students(
+     id INT primary key AUTO-INCREMENT ,
+     name VARCHAR(100) not null ,
+     email VARCHAR(100) ,
+     enrollment_date DATE
+    )
+   
+
+    <!-- taske 11 -->
+    <hr>
+  <h1>Insert, Update, Delete</h1>
+  <ol>
+    <li>INSERT INTO students(name, email, enrollment_date)
+      VALUES('rasha', 'rashayaseen4', '2024-7-15');</li>
+    <li>UPDATE students
+      SET email = 'yaseen4@gmail.com'
+      WHERE id = 1 ;</li>
+    <li>DELETE FROM students 
+      WHERE id=1;</li>
+  </ol>
+
+
+  <!-- taske 12  -->
+   <hr>
+   <h1>Using a Database</h1>
+   USE studentdb;
+   CREATE TABLE people(
+       id INT primary key AUTO_INCREMENT,
+     name VARCHAR(100) not null,
+     email VARCHAR(100),
+     enrollment_date DATE
+   ); 
+
+
+
+   <!-- taske 13 -->
+   <hr>
+    <h1>Creating a Database and Table</h1>
+    <ol>
+      <li>CREATE DATABASE PracticeDB;</li>
+      <li>CREATE TABLE Employees(
+        emp_id INT primary key AUTO_INCREMENT,
+        emp_name VARCHAR(100) not null,
+        emp_position VARCHAR(100),
+        hire_date DATE
+        );</li>
+    </ol>
+
+
+    <!-- taske 14 -->
+    <hr>
+    <h1>Working with Different Data Types</h1>
+    <P>CREATE TABLE projects(
+      project_id INT PRIMARY KEY AUTO_INCREMENT,
+       project_name VARCHAR(100) NOT NULL,
+       start_date DATE,
+       end_date DATE 
+   );</P> 
+
+
+   <!-- taske 15  -->
+    <h1>Data Manipulation</h1>
+    <ol>
+      <li>INSERT into employees(emp_name, emp_position, hire_date) VALUES ('rasha', 'part A', '2024-11-3'),
+        ('asl', 'part b', '2024-12-5'),('raghad', 'part a', '2024-10-13'),('nesreen', 'part c', '2024-9-28');</li>
+      <li>UPDATE employees SET emp_position = 'ZZXX' WHERE emp_id=4;</li>
+      <li>DELETE FROM employees WHERE emp_id=2;</li>
+    </ol>
+</body>
+</html>
