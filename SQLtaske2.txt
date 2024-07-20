@@ -1,0 +1,234 @@
+TABLE:
+CREATE TABLE employees2(
+id INT PRIMARY KEY AUTO_INCREMENT,  
+name VARCHAR(100) NOT NULL,
+email varchar(150) UNIQUE,  
+salary INT CHECK(salary > 0),
+hire_date DATE,
+departments_id INT ,
+status VARCHAR(100) DEFAULt 'Active'
+);
+
+
+INSERT INTO employees2 (name, email, salary, hire_date, departments_id) VALUES
+('John Doe', 'john.doe@example.com', 70000, '2022-01-15', 1),
+('Jane Smith', 'jane.smith@example.com', 90000, '2021-03-20', 2),
+('Michael Johnson', 'michael.johnson@example.com', 60000, '2020-07-10', 1),
+('Emily Davis', 'emily.davis@example.com', 65000, '2023-05-25', 3),
+('Daniel Wilson', 'daniel.wilson@example.com', 80000, '2019-11-30', 2),
+('Alice Brown', 'alice.brown@example.com', 35000, '2022-09-15', 1),
+('Bob White', 'bob.white@example.com', 55000, '2021-08-23', 3),
+('Chris Green', 'chris.green@example.com', 50000, '2023-01-19', 4),
+('Diana Black', 'diana.black@example.com', 60000, '2020-03-12', 2),
+('Ethan Blue', 'ethan.blue@example.com', 95000, '2018-02-25', 4),
+('Sophia Miller', 'sophia.miller@example.com', 75000, '2023-04-10', 3),
+('James Wilson', 'james.wilson@example.com', 42000, '2022-06-05', 1),
+('Olivia Lee', 'olivia.lee@example.com', 67000, '2021-10-14', 3),
+('Liam Harris', 'liam.harris@example.com', 64000, '2020-12-20', 2),
+('Isabella Garcia', 'isabella.garcia@example.com', 58000, '2022-02-28', 4),
+('Noah Martinez', 'noah.martinez@example.com', 61000, '2019-09-30', 1),
+('Ava Robinson', 'ava.robinson@example.com', 69000, '2023-03-22', 3),
+('Mason Clark', 'mason.clark@example.com', 71000, '2020-08-15', 2),
+('Mia Rodriguez', 'mia.rodriguez@example.com', 53000, '2022-07-18', 4),
+('Lucas Walker', 'lucas.walker@example.com', 62000, '2021-11-07', 3),
+('Charlotte Young', 'charlotte.young@example.com', 34000, '2019-05-16', 2),
+('Amelia King', 'amelia.king@example.com', 58000, '2023-06-30', 1),
+('Oliver Adams', 'oliver.adams@example.com', 46000, '2022-12-01', 4),
+('Ella Scott', 'ella.scott@example.com', 72000, '2021-01-10', 3),
+('Jacob Turner', 'jacob.turner@example.com', 68000, '2020-10-05', 2),
+('Aiden Hall', 'aiden.hall@example.com', 55000, '2023-08-23', 4);
+
+
+
+
+**TASKE 1:**
+SELECT * FROM employees2;
+
+
+**TASKE 2:**
+SELECT name, salary FROM employees2;
+
+
+**TASKE 3:**
+SELECT * FROM employees2 WHERE salary>50000;
+
+
+
+**TASKE 4:**
+SELECT * FROM employees2 WHERE name LIKE 'j%';
+
+
+
+**TASKE 5:**
+SELECT * FROM employees2 WHERE departments_id IN(1, 2, 3);
+
+
+**TASKE 6:**
+SELECT * FROM employees2 ORDER BY hire_date DESC;
+
+
+**TASKE 7:**
+SELECT COUNT(*) FROM employees2;
+
+
+**TASKE 8:**
+SELECT SUM(salary) FROM employees2;
+
+
+**TASKE 9:**
+SELECT AVG(salary) FROM employees2;
+
+
+**TASKE 10:**
+SELECT MIN(salary) FROM employees2;
+SELECT MAX(salary) FROM employees2;
+
+
+**TASKE 11:**
+1-WHERE:
+SELECT * FROM employees2 WHERE salary>50000;
+
+2- HAVING:
+SELECT departments_id, AVG(salary) AS avarege_salary
+FROM employees2
+GROUP BY departments_id
+HAVING AVG (salary)>50000;
+
+
+
+**TASKE 12:**
+CREATE TABLE employee_ONE_TO_ONE(
+id INT PRIMARY KEY AUTO_INCREMENT,
+ name VARCHAR(100) NOT NULL,
+ email VARCHAR(100) UNIQUE NOT NULL,
+ hire_date DATE NOT NULL
+);
+
+CREATE TABLE employee_details(
+  employee_id INT PRIMARY KEY,
+    address VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(15)UNIQUE NOT NULL,
+    birth_date DATE,
+  FOREIGN KEY (employee_id) REFERENCES employee_ONE_TO_ONE (id)
+);
+
+
+
+**TASKE 13:**
+CREATE TABLE departments_one_to_many(
+id INT PRIMARY KEY AUTO_INCREMENT,
+department_name VARCHAR(100) NOT NULL
+);
+CREATE TABLE employe(
+id INT PRIMARY KEY AUTO_INCREMENT ,
+name VARCHAR(100) NOT NULL ,
+email VARCHAR(150) NOT NULL,
+ department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments_one_to_many(id)
+);
+
+
+**TASKE 14:**
+CREATE TABLE students_many_to_many(
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(150) UNIQUE NOT NULL
+);
+
+CREATE TABLE courses(
+   id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE student_courses (
+student_id INT NOT NULL,
+course_id INT NOT NULL,
+PRIMARY KEY (student_id, course_id),
+FOREIGN KEY (student_id) REFERENCES students_many_to_many(id),
+FOREIGN KEY (course_id) REFERENCES courses(id)
+);
+
+
+
+**TASKE 15:**
+CREATE TABLE departments_one_to_many(
+id INT PRIMARY KEY AUTO_INCREMENT,
+department_name VARCHAR(100) NOT NULL
+);
+CREATE TABLE employe(
+id INT PRIMARY KEY AUTO_INCREMENT ,
+name VARCHAR(100) NOT NULL ,
+email VARCHAR(150) NOT NULL,
+ department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments_one_to_many(id)
+);
+
+
+
+
+**TASKE 16:**
+name VARCHAR(100) NOT NULL,
+
+
+
+**TASKE 17:**
+email varchar(150) UNIQUE,
+
+
+
+
+**TASKE 18 :**
+salary INT CHECK(salary > 0),
+
+
+**TASKE 19 :**
+status varchar(100) DEFAULt 'Active',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
