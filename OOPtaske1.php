@@ -49,9 +49,9 @@ function getDetails(){
 function __toString() {
     return $this->getDetails();
 }
-
-
 }
+
+
 $Mycar = new car("Toyota", "Corolla", "VIN1234567890");
 echo $Mycar->getmake();
 echo "<br>";
